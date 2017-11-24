@@ -9,16 +9,11 @@ module.exports = {
   },
 
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        use: {
-          loaded: "babel-loader",
-          options: {
-            presets: ["babel-preset-env"]
-          }
-        }
+        use: "babel-loader"
       }
     ]
   }

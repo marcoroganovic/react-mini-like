@@ -6,6 +6,9 @@
   "repository": "https://github.com/marcoroganovic/react-like.git",
   "author": "Marco Roganovic <marcoroganovic@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
