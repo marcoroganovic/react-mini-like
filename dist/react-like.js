@@ -191,6 +191,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   render: __WEBPACK_IMPORTED_MODULE_1__utilities__["e" /* render */]
 });
 
+window.ReactLike = {
+  Component: __WEBPACK_IMPORTED_MODULE_0__Component__["a" /* default */],
+  render: __WEBPACK_IMPORTED_MODULE_1__utilities__["e" /* render */]
+};
+
 /***/ }),
 /* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
