@@ -78,3 +78,19 @@ export const getEventMeta = type => {
 
   return info.map(removeGreaterAndLessSigns);
 } 
+
+
+/**
+ * Method for appending produced DOM tree to target element
+ * @param {function} component
+ * @param {node} target
+ * @return {void}
+ **/
+export const render = (component, target) => {
+  if(domTree && target) {
+    target.appendChild(domTree.internalRender());
+    return;
+  }
+
+  throw new Error("Check if you've provided right arguments to render method");
+}
