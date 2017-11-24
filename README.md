@@ -8,20 +8,20 @@ for how potentially view library could work based on React's API. This is just
   diffing, lifecycle hooks and other, to me still, magical stuff.
 
 Instead of using JSX or separete templating engine every component has `html`
-method with receives template as string and returns document fragment or if it's
-child component it would return interpolated HTML also as a string to parent
+method with receives template as string and returns `DocumentFragment` or if it's
+child component it would return interpolated HTML as a string to parent
 component.
 
-Embedding other components into render is done by static method `create` and it
-receives child class as first, and props which are passed to instance of that
+Embedding other components into render is done by static method on class
+Component `create`, it receives child class as first, and props which are passed to instance of that
 component as second parameter.
 
-In order to get DOM with real values as DocumentFragment there is another static
+In order to get DOM with real values as `DocumentFragment` there is another static
 method on `Component` class called `rootComponent` which accepts exactly same
 arguments as before mentioned static method `create`.
 
 To add event listeners you need to define `addEvents` method on class that
-extends component. This method will be called internally and it should return
+extends `Component`. This method will be called internally and it should return
 object with keys as `<element>::[type]` and callback function as value.
 
 #### Example:
@@ -37,7 +37,7 @@ addEvents() {
 ```
 
 To make component re-render with new state one would use `setState` method which
-accepts callback to which would be provided previous state and return value of
+accepts callback in which previous state is passed as argument and return value of
 that callback will be set as new state and component will update.
 
 #### Example
