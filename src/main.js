@@ -10,3 +10,8 @@ export default {
   Component,
   render
 }
+
+window.ReactLike = {
+  Component,
+  render
+}
