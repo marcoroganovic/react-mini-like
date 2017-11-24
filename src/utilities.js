@@ -70,10 +70,10 @@ export const uuid = uniqueID();
  * @return {array}
  **/
 export const getEventMeta = type => {
-  const info = key.split("::");
+  const info = type.split("::");
 
-  if(key.length !== 2) {
-    return new Error(`Wrong definition of event listener ${key}`);
+  if(info.length !== 2) {
+    return new Error(`Wrong definition of event listener ${type}`);
   }
 
   return info.map(removeGreaterAndLessSigns);
