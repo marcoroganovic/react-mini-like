@@ -11,7 +11,7 @@ class User extends Component {
     return this.html(`
       <div class="user">
         <h2>${props.name}</h2>
-        <h3>${props.user}</h3>
+        <h3>${props.username}</h3>
         <img src="${props.avatarURL}" alt="avatar" />
       </div>
     `)
@@ -34,8 +34,8 @@ class App extends Component {
 
 
   render(state, props) {
-    const list = state.users.map(user => {
-      return Component.create(User, user);
+    const list = state.users.map(userProps => {
+      return Component.create(User, userProps);
     });
 
     return this.html(`
