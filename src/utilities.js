@@ -87,8 +87,8 @@ export const getEventMeta = type => {
  * @return {void}
  **/
 export const render = (component, target) => {
-  if(domTree && target) {
-    target.appendChild(domTree.internalRender());
+  if(component && target) {
+    target.appendChild(component.internalRender());
     return;
   }
 
