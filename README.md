@@ -50,6 +50,42 @@ removeElement(id) {
 }
 ```
 
+Iterating over a collection of arbitrary values is as easy as using JavaScript's
+`map` higher order function. To display those generated components you'd use
+static method named `nodes` which accepts an array of components as argument.
+
+#### Example
+```javascript
+class TodoTask extends Component {
+  render(state, props) {
+    return this.html(`
+      <li data-key=${props.id}>${props.value}</li>
+    `);
+  }
+}
+
+class Todo extends Component {
+  state = {
+    tasks: [
+      { id: 1, task: "Learn JavaScript" }, 
+      { id: 2, task: "Learn Data Structures and Algorithms" },
+      { id: 3, task: "Learn Test-Driven Developemnt" }
+    ]
+  }
+
+  render(state, props) {
+    const list = state.items
+      .map(itemProps => Component.create(Todo,itemProps)); 
+
+    return this.html(`
+      <ul>
+        ${Component.nodes(list)}
+      </ul>
+    `);
+  }
+}
+
+```
 ### Sample demo
 ```javascript
 import { Component, render } from "react-like";
