@@ -75,7 +75,7 @@ class Todo extends Component {
 
   render(state, props) {
     const list = state.items
-      .map(itemProps => Component.create(Todo,itemProps)); 
+      .map(itemProps => Component.create(Todo, itemProps)); 
 
     return this.html(`
       <ul>
