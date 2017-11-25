@@ -38,7 +38,7 @@ class Component {
    * @param {object} props | optional
    * @return {object}
    **/
-  static rootComponent(Comp, props) {
+  static root(Comp, props) {
     return new Comp(props || {});
   }
 

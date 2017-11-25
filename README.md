@@ -17,7 +17,7 @@ Component `create`, it receives child class as first, and props which are passed
 component as second parameter.
 
 In order to get DOM with real values as `DocumentFragment` there is another static
-method on `Component` class called `rootComponent` which accepts exactly same
+method on `Component` class called `root` which accepts exactly same
 arguments as before mentioned static method `create`.
 
 To add event listeners you need to define `addEvents` method on class that
