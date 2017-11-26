@@ -58,7 +58,7 @@ class Component {
   static create(Comp, props, children) {
     const component = new Comp(props);
     const placeholder = $$("div");
-    placeholder.appendChild(comp.internalRender());
+    placeholder.appendChild(component.internalRender());
     return placeholder.innerHTML;
   }
 
