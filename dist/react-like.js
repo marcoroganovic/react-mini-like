@@ -143,10 +143,10 @@ const uuid = uniqueID();
  * @return {array}
  **/
 const getEventMeta = type => {
-  const info = key.split("::");
+  const info = type.split("::");
 
-  if (key.length !== 2) {
-    return new Error(`Wrong definition of event listener ${key}`);
+  if (info.length !== 2) {
+    return new Error(`Wrong definition of event listener ${type}`);
   }
 
   return info.map(removeGreaterAndLessSigns);
@@ -161,8 +161,8 @@ const getEventMeta = type => {
  * @return {void}
  **/
 const render = (component, target) => {
-  if (domTree && target) {
-    target.appendChild(domTree.internalRender());
+  if (component && target) {
+    target.appendChild(component.internalRender());
     return;
   }
 
@@ -236,7 +236,7 @@ class Component {
    * @param {object} props | optional
    * @return {object}
    **/
-  static rootComponent(Comp, props) {
+  static root(Comp, props) {
     return new Comp(props || {});
   }
 
@@ -406,7 +406,7 @@ class Component {
   html(template) {
     const frag = Object(__WEBPACK_IMPORTED_MODULE_0__utilities__["c" /* $frag */])();
     const placeholder = Object(__WEBPACK_IMPORTED_MODULE_0__utilities__["b" /* $$ */])("div");
-    placeholder.innerHTML = template;
+    placeholder.innerHTML = `<component>${template}</component>`;
     let firstChild = null;
 
     while (firstChild = placeholder.firstElementChild) {
