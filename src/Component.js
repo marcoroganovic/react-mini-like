@@ -213,7 +213,7 @@ class Component {
   html(template) {
     const frag = $frag();
     const placeholder = $$("div");
-    placeholder.innerHTML = template;
+    placeholder.innerHTML = `<component>${template}</component>`;
     let firstChild = null;
 
     while(firstChild = placeholder.firstElementChild) {
