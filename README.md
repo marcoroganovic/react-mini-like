@@ -8,7 +8,7 @@ for how potentially view library could work based on React's API. This is just
   diffing, lifecycle hooks and other, to me still, magical stuff.
 
 Instead of using JSX or separete templating engine every component has `html`
-method with receives template as string and returns `DocumentFragment` or if it's
+method which receives template as string and returns `DocumentFragment` or if it's
 child component it would return interpolated HTML as a string to parent
 component.
 
